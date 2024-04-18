@@ -58,4 +58,4 @@ p1 <- results_mat_df %>%
         panel.grid.minor = element_blank(),
         panel.background = element_rect(fill = "white", colour = NA))
 # save to file
-ggsave("outputs/matrix_multiplication.png", p1, width = 20, height = 12, units = "cm")
+ggsave("outputs/figures/matrix_multiplication.png", p1, width = 20, height = 12, units = "cm")
