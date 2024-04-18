@@ -1,39 +1,11 @@
 library(ggplot2)
-library(tidyverse)
 library(RColorBrewer)
 library(ggpubr)
+library(tidyverse)
 rm(list = ls())
 
 # read in results file
-results_mat <- readRDS("outputs/results_matrix_multiplication.rds")
-
-# function to apply mapping
-apply_mapping <- function(input_string) {
-  match <- sapply(names(mapping_vector), function(pattern) grepl(pattern, input_string))
-  if (any(match)) {
-    return(mapping_vector[names(match)[match]])
-  } else {
-    return("other")
-  }
-}
-
-# map function expressions to easier to read names
-mapping_vector <- setNames(
-  c("%*%", "crossprod", "Rfast", "Matrix", "GPUmatrix"),
-  c("^vectors_mat", "^crossprod", "Rfast", "^Matrix","^GPUmatrix")
-)
-
-# reformat matrix multiplication results
-results_mat_df <- results_mat %>%
-  rowwise() %>%
-  mutate(expression = paste0(deparse(expression), collapse = "")) %>%
-  mutate(expression = apply_mapping(expression)) %>%
-  mutate(median_label = case_when(
-    n_vectors == "10" ~ paste0(signif(median * 1000000, 2), "ns"),
-    n_vectors == "100" ~ paste0(signif(median * 1000000, 2), "ns"),
-    n_vectors == "1000" ~ paste0(signif(median * 1000, 2), "ms"))) %>%
-  group_by(n_vectors) %>%
-  mutate(rank = row_number(median)) 
+results_mat_df <- readr::read_csv("data/matmult_timings.csv")
 
 # define order levels for plotting
 p1_order <- results_mat_df %>%

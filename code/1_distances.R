@@ -70,19 +70,19 @@ benchmark_dist <- function(n_vectors, n_iterations) {
 s <- Sys.time()
 small_results <- bench::press(n_vectors = c(2:10),{benchmark_dist(n_vectors, n_iterations = 1000)})
 message("Time taken: ", Sys.time() - s)
-saveRDS(small_results, "outputs/results2_10.rds")
+saveRDS(small_results, "data/results2_10.rds")
 rm(small_results); gc()
 
 s <- Sys.time()
 medium_results <- bench::press(n_vectors = seq(10, 100, 10),{benchmark_dist(n_vectors, n_iterations = 1000)})
 message("Time taken: ", Sys.time() - s)
-saveRDS(medium_results, "outputs/results10_100.rds")
+saveRDS(medium_results, "data/results10_100.rds")
 rm(medium_results); gc()
 
 s <- Sys.time()
 large_results <- bench::press(n_vectors = seq(100, 1000, 100),{benchmark_dist(n_vectors, n_iterations = 1000)})
 message("Time taken: ", Sys.time() - s)
-saveRDS(large_results, "outputs/results100_1000.rds")
+saveRDS(large_results, "data/results100_1000.rds")
 rm(large_results); gc()
 
 # Write a benchmark function taking only the fastest methods for the extra large dataset
@@ -105,7 +105,7 @@ benchmark_dist_xl <- function(n_vectors, n_iterations) {
 s <- Sys.time()
 extra_large_results <- bench::press(n_vectors = seq(1000, 10000, 1000), {benchmark_dist_xl(n_vectors, n_iterations = 1)})
 message("Time taken: ", Sys.time() - s)
-saveRDS(extra_large_results, "outputs/results1000_10000.rds")
+saveRDS(extra_large_results, "data/results1000_10000.rds")
 
 # bench matrix multiplication
 benchmark_matrix_multiplication <- function(n_vectors) {
@@ -131,7 +131,7 @@ results_matrix_multiplication <- bench::press(
     benchmark_matrix_multiplication(n_vectors)
   }
 )
-saveRDS(results_matrix_multiplication, "outputs/results_matrix_multiplication.rds")
+saveRDS(results_matrix_multiplication, "data/results_matrix_multiplication.rds")
 
 #  big dist example
 set.seed(123)
