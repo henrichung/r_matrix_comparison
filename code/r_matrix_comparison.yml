@@ -1,0 +1,43 @@
+name: r_matrix_comparison
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - tensorflow[and-cuda]
+  - tensorflow-gpu
+  - cudatoolkit=11.8 
+  - cudnn=8.9.7
+  - r-base=4.3.3
+  - r-png
+  - r-rcurl
+  - r-tidyverse
+  - r-data.table
+  - r-rcpp
+  - r-microbenchmark
+  - r-ade4
+  - r-proxy
+  - r-proxyC
+  - r-RcppParallel
+  - r-parallelDist
+  - r-Rfast
+  - r-RcppArmadillo
+  - r-fastMatrix
+  - r-duckDB
+  - r-Bigalgebra
+  - r-matrix
+  - r-distances
+  - r-pryr
+  - r-plotly
+  - r-profmem
+  - r-torch
+  - r-tensorflow
+  - r-keras
+  - r-remotes
+  - r-devtools
+  - r-ggpubr
+  # - r-fastR
+  # - r-crossprod 
+  # - r-gpuR
+  # - r-gpuMATRIX
+
