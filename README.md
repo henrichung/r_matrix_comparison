@@ -29,9 +29,10 @@ the fastest R functions to calculate euclidean distance between rows of matrices
 
 <img src = "outputs/figures/distance_combined.png" width="700" height="400" alt="Plotted times for euclidean distance functions in R">
 
+### Matrix multiplication
+
 For matrix crossproduct calculation, `%*%` is fastest. For larger matrices, GPUmatrix again takes the lead.
 
-### Matrix multiplication
 <img src = "outputs/figures/matrix_multiplication.png" width = "700" height = "400" alt = "Compute time for matrix multiplication functions in R">
 
 ## Methods
