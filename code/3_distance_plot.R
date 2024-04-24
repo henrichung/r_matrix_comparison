@@ -52,7 +52,7 @@ p1 <- p1_data %>%
   scale_y_log10(labels = scales::label_number(suffix = " ns")) +
   scale_x_continuous(breaks = p1_data$n_vectors) +
   xlab("n x n matrix") + ylab("Time") +
-  labs(color = "Expression", shape = "Expression", title = "2-10") +
+  labs(color = "Expression", shape = "Expression", title = "Timings for Square Matrices 2-10") +
   theme_bw()
 
 # save to file
@@ -71,7 +71,7 @@ p2 <- p2_data %>%
   scale_y_log10(labels = scales::label_number(suffix = " ns")) +
   scale_x_continuous(breaks = p2_data$n_vectors) +
   xlab("n x n matrix") + ylab("Time") +
-  labs(color = "Expression", shape = "Expression", title = "10-100") +
+  labs(color = "Expression", shape = "Expression", title = "Timings for Square Matrices 10-100") +
   theme_bw()
 # save to file
 ggsave("outputs/figures/distance_10-100.png", p2, width = 20, height = 12, units = "cm")
@@ -89,7 +89,7 @@ p3 <- p3_data %>%
   scale_y_log10(labels = scales::label_number(suffix = " ms")) +
   scale_x_continuous(breaks = p3_data$n_vectors) +
   xlab("n x n matrix") + ylab("Time") +
-  labs(color = "Expression", shape = "Expression", title = "100-1000") +
+  labs(color = "Expression", shape = "Expression", title = "Timings for Square Matrices 100-1000") +
   theme_bw()
 # save to file
 ggsave("outputs/figures/distance_100-1000.png", p3, width = 20, height = 12, units = "cm")
@@ -104,7 +104,7 @@ p4 <- p4_data %>%
   scale_y_log10(labels = scales::label_number(suffix = " s")) +
   scale_x_continuous(breaks = p4_data$n_vectors) +
   xlab("n x n matrix") + ylab("Time") +
-  labs(color = "Expression", shape = "Expression", title = "1k-10k") +
+  labs(color = "Expression", shape = "Expression", title = "Timings for Square Matrices 1k-10k") +
   theme_bw()
 # save to file
 ggsave("outputs/figures/distance_1000-10000.png", p4, width = 20, height = 12, units = "cm")
