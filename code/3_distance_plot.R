@@ -51,7 +51,7 @@ p1 <- p1_data %>%
   scale_shape_manual(values = shape_mapping) +
   scale_y_log10(labels = scales::label_number(suffix = " ns")) +
   scale_x_continuous(breaks = p1_data$n_vectors) +
-  xlab("Dimensions") + ylab("Time") +
+  xlab("n x n matrix") + ylab("Time") +
   labs(color = "Expression", shape = "Expression", title = "2-10") +
   theme_bw()
 
@@ -70,7 +70,7 @@ p2 <- p2_data %>%
   scale_shape_manual(values = shape_mapping) +
   scale_y_log10(labels = scales::label_number(suffix = " ns")) +
   scale_x_continuous(breaks = p2_data$n_vectors) +
-  xlab("Dimensions") + ylab("Time") +
+  xlab("n x n matrix") + ylab("Time") +
   labs(color = "Expression", shape = "Expression", title = "10-100") +
   theme_bw()
 # save to file
@@ -88,7 +88,7 @@ p3 <- p3_data %>%
   scale_shape_manual(values = shape_mapping) +
   scale_y_log10(labels = scales::label_number(suffix = " ms")) +
   scale_x_continuous(breaks = p3_data$n_vectors) +
-  xlab("Dimensions") + ylab("Time") +
+  xlab("n x n matrix") + ylab("Time") +
   labs(color = "Expression", shape = "Expression", title = "100-1000") +
   theme_bw()
 # save to file
@@ -103,7 +103,7 @@ p4 <- p4_data %>%
   scale_shape_manual(values = shape_mapping) +
   scale_y_log10(labels = scales::label_number(suffix = " s")) +
   scale_x_continuous(breaks = p4_data$n_vectors) +
-  xlab("Dimensions") + ylab("Time") +
+  xlab("n x n matrix") + ylab("Time") +
   labs(color = "Expression", shape = "Expression", title = "1k-10k") +
   theme_bw()
 # save to file
@@ -165,8 +165,8 @@ p5 <- p5_data %>%
     direction = -1, begin = 0.15, end = 1,
     guide = guide_colorbar(reverse = TRUE, ticks = TRUE)) +
   theme_bw() +
-  labs(title = "Euclidean Distance") +
-  xlab("Dimensions") + ylab("") +
+  labs(title = "Average Time") +
+  xlab("n x n matrixs") + ylab("") +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_rect(fill = "white", colour = NA))
