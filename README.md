@@ -1,7 +1,7 @@
 # R Distance Functions Comparison
 
 ## Overview
-This repository evaluates the performance of several R euclidean distance functions from different packages. 
+This repository evaluates the performance of distance functions from different R packages. 
 
 ### Included Implementations
 - [`stats`](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/dist)
