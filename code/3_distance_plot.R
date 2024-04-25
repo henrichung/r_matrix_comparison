@@ -171,7 +171,7 @@ p5 <- p5_data %>%
     guide = guide_colorbar(reverse = TRUE, ticks = TRUE)) +
   theme_bw() +
   labs(title = "Average Time") +
-  xlab("n x n matrixs") + ylab("") +
+  xlab("n x n matrix") + ylab("") +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_rect(fill = "white", colour = NA))
