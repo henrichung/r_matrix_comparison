@@ -4,6 +4,7 @@ library(RColorBrewer)
 library(ggpubr)
 rm(list = ls())
 
+
 distance_timings <- readr::read_csv("data/distance_timings.csv")
 
 # Define a dataframe for function groups for plotting
@@ -53,7 +54,9 @@ p1 <- p1_data %>%
   scale_x_continuous(breaks = p1_data$n_vectors) +
   xlab("n x n matrix") + ylab("Time") +
   labs(color = "Expression", shape = "Expression", title = "Timings for Square Matrices 2-10") +
-  theme_bw()
+  theme_bw() +
+  theme(legend.key.size = unit(1.2, "lines"))
+
 
 # save to file
 ggsave("outputs/figures/distance_2-10.png", p1, width = 20, height = 12, units = "cm")
@@ -126,6 +129,8 @@ g1 <- ggarrange(
   ncol=2, nrow=2, 
   common.legend = TRUE, legend="right", 
   legend.grob = shared_legend)
+system("rm Rplots.pdf")
+
 ggsave("outputs/figures/distance_combined.png", g1, width = 30, height = 16, units = "cm")
 
 # Order expressions by median time in a tile plot
